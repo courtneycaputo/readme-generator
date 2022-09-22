@@ -1,31 +1,52 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const generateMarkdown = require('generateReadme');
+
+const generateMarkdown = ({title, description, installation, usage, license, contributing, tests, github, email}) =>
+    `
+    # ${title}
+    
+    [![License](https://img.shields.io/badge/License-${license}-blue.svg)](https://opensource.org/licenses/${license})
+
+    ## Table of Contents
+    - [Description](#description)
+    - [Installation] (#installation)
+    - [Usage] (#usage)
+    - [License] (#license)
+    - [Contributing] (#contributing)
+    - [Tests] (#tests)
+    - [Contact] (#contact)
+    
+    ## Description: <a name="description"></a>
+    ${description}
+
+    ## Installation: <a name="installation"></a>
+    ${installation}
+
+    ## Usage: <a name="usage"></a>
+    ${usage}
+
+    ## License: <a name="license"></a>
+    ${license}
+
+    ## Contributing: <a name="contributing"></a>
+    ${contributing}
+
+    ## Tests: <a name="tests"></a>
+    ${tests}
+
+    ## Contact: <a name="contact"></a>
+    * Github: <a href="https://github.com/${github}">${github}</a>
+    * Email: <a href="mailto:${email}">${email}</a>
+
+    
+`;
 
 console.log("Welcome to my README generator")
 console.log("Answer the following questions to generate a high quality, professional README")
 
-const generateMarkdown(data) {
-    return `
-    # ${title}
-    
-    [![License](https://img.shields.io/badge/License-${license}-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-    ## Table of Contents
-    - [Description](#description)
-    
-    ## Description: <a name="description></a>
-    ${description}
-    
-`
-};
-
-
-
-
 // Questions the user will answer to populate data into README
-const questions = [
+inquirer.prompt([
     // Name of Project
     {
         type: 'input',
@@ -59,7 +80,7 @@ const questions = [
         type: 'checkbox',
         message: 'Select which license your project will have.',
         name: 'license',
-        choices: ["MIT", "APACHE","GPL","none of the above"]
+        choices: ["MIT", "Apache_2.0","BSD_3--Clause","EPL"]
     },
 
     // Contributing
@@ -91,33 +112,33 @@ const questions = [
     },
 
     
-];
+])
 
 
-// Function to create readme file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => 
-    err ? console.log(err) : console.log('README file successfully generated!'))
-};
+// // Function to create readme file
+// function writeToFile(fileName, data) {
+//     fs.writeFile(fileName, data, (err) => 
+//     err ? console.log(err) : console.log('README file successfully generated!'));
+// };
 
-// Function to initialize
-function init () {
-    inquirer.promp(questions)
-    .then(function (userInput) {
-        console.log(userInput)
-        writeToFile("sampleREADME.md", generateMarkdown(userInput));
-    });
-};
+// // Function to initialize
+// function init () {
+//     inquirer.promp(questions)
+//     .then(function (userInput) {
+//         console.log(userInput)
+//         writeToFile("sampleREADME.md", generateMarkdown(userInput));
+//     });
+// };
 
-init();
-
-
+// init();
 
 
 
-// .then((ansers) => {
-//     const readMeContent = generateMarkdown(ansers);
-//     fs.writeFile('sampleREADME.md', readMeContent, (err) =>
-//     err ? console.log(err) : console.log('README file successfully created!')
-//     );
-// });
+
+
+.then((answers) => {
+    const readMeContent = generateMarkdown(answers);
+    fs.writeFile('README.md', readMeContent, (err) =>
+    err ? console.log(err) : console.log('README file successfully created!')
+    );
+});
