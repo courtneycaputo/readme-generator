@@ -1,34 +1,34 @@
 
-# test project
+# test project title
     
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache_2.0)
+[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD_3--Clause)
 
 ## Table of Contents
 - [Description](#description)
-- [Installation] (#installation)
-- [Usage] (#usage)
-- [License] (#license)
-- [Contributing] (#contributing)
-- [Tests] (#tests)
-- [Contact] (#contact)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Contact](#contact)
     
 ## Description: <a name="description"></a>
-testttttt
+tester
 
 ## Installation: <a name="installation"></a>
-test install
+test installing
 
 ## Usage: <a name="usage"></a>
-test usage
+test uasage
 
 ## License: <a name="license"></a>
-Apache_2.0
+BSD_3--Clause
 
 ## Contributing: <a name="contributing"></a>
-contribute what you want
+contribute
 
 ## Tests: <a name="tests"></a>
-test it out
+by testing it
 
 ## Contact: <a name="contact"></a>
 * Github: <a href="https://github.com/courtneycaputo">courtneycaputo</a>

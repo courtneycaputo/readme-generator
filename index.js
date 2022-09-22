@@ -10,12 +10,12 @@ const generateMarkdown = ({title, description, installation, usage, license, con
 
 ## Table of Contents
 - [Description](#description)
-- [Installation] (#installation)
-- [Usage] (#usage)
-- [License] (#license)
-- [Contributing] (#contributing)
-- [Tests] (#tests)
-- [Contact] (#contact)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Contact](#contact)
     
 ## Description: <a name="description"></a>
 ${description}
