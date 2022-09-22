@@ -1,6 +1,13 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('generateReadme');
+
+const generateMarkdown = ({title, description, installation, usage, license, contributing, tests, github, questions}) => 
+`
+Markdown here
+
+`
 
 console.log("Answer the following questions to generate a high quality, professional README")
 
@@ -33,43 +40,51 @@ inquirer.createPromptModule([
      // Installation
      {
         type: 'input',
-        message: 'Write project description:';
+        message: 'Write instructions for installation.';
         name: 'installation',
     },
 
      // Usage
      {
         type: 'input',
-        message: 'Write project description:';
+        message: 'Write notes for usage';
         name: 'usage',
     },
 
      // License
      {
-        type: 'input',
-        message: 'Write project description:';
+        type: 'checkbox',
+        message: 'Select which license your project will have';
         name: 'license',
+        choices: ["MIT", "APACHE","GPL","none of the above"]
     },
 
      // Contributing
      {
         type: 'input',
-        message: 'Write project description:';
+        message: 'How can users contribute to this project?';
         name: 'contributing',
     },
 
       // Test
       {
         type: 'input',
-        message: 'Write project description:';
+        message: 'How does a user test this project?';
         name: 'tests',
     },
 
-      // Questions
+      // Github
       {
         type: 'input',
-        message: 'Write project description:';
-        name: 'quest',
+        message: 'Enter your Github username';
+        name: 'github',
+    },
+
+      // email
+      {
+        type: 'input',
+        message: 'Enter your email address';
+        name: 'email',
     },
 
     
