@@ -4,40 +4,40 @@ const fs = require('fs');
 
 const generateMarkdown = ({title, description, installation, usage, license, contributing, tests, github, email}) =>
     `
-    # ${title}
+# ${title}
     
-    [![License](https://img.shields.io/badge/License-${license}-blue.svg)](https://opensource.org/licenses/${license})
+[![License](https://img.shields.io/badge/License-${license}-blue.svg)](https://opensource.org/licenses/${license})
 
-    ## Table of Contents
-    - [Description](#description)
-    - [Installation] (#installation)
-    - [Usage] (#usage)
-    - [License] (#license)
-    - [Contributing] (#contributing)
-    - [Tests] (#tests)
-    - [Contact] (#contact)
+## Table of Contents
+- [Description](#description)
+- [Installation] (#installation)
+- [Usage] (#usage)
+- [License] (#license)
+- [Contributing] (#contributing)
+- [Tests] (#tests)
+- [Contact] (#contact)
     
-    ## Description: <a name="description"></a>
-    ${description}
+## Description: <a name="description"></a>
+${description}
 
-    ## Installation: <a name="installation"></a>
-    ${installation}
+## Installation: <a name="installation"></a>
+${installation}
 
-    ## Usage: <a name="usage"></a>
-    ${usage}
+## Usage: <a name="usage"></a>
+${usage}
 
-    ## License: <a name="license"></a>
-    ${license}
+## License: <a name="license"></a>
+${license}
 
-    ## Contributing: <a name="contributing"></a>
-    ${contributing}
+## Contributing: <a name="contributing"></a>
+${contributing}
 
-    ## Tests: <a name="tests"></a>
-    ${tests}
+## Tests: <a name="tests"></a>
+${tests}
 
-    ## Contact: <a name="contact"></a>
-    * Github: <a href="https://github.com/${github}">${github}</a>
-    * Email: <a href="mailto:${email}">${email}</a>
+## Contact: <a name="contact"></a>
+* Github: <a href="https://github.com/${github}">${github}</a>
+* Email: <a href="mailto:${email}">${email}</a>
 
     
 `;
