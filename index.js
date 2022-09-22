@@ -1,130 +1,123 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('generateReadme');
+// const generateMarkdown = require('generateReadme');
 
-const generateMarkdown = ({title, description, installation, usage, license, contributing, tests, github, questions}) => 
-`
-Markdown here
-
-`
-
+console.log("Welcome to my README generator")
 console.log("Answer the following questions to generate a high quality, professional README")
 
-// TODO: Create an array of questions for user input
-const questions = []; // provided code
+const generateMarkdown(data) {
+    return `
+    # ${title}
+    
+    [![License](https://img.shields.io/badge/License-${license}-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-inquirer.createPromptModule([
+    ## Table of Contents
+    - [Description](#description)
+    
+    ## Description: <a name="description></a>
+    ${description}
+    
+`
+};
+
+
+
+
+// Questions the user will answer to populate data into README
+const questions = [
     // Name of Project
     {
         type: 'input',
-        message: 'What is the title of the project?';
+        message: 'What is the title of the project?',
         name: 'title',
     },
 
     // Description of Project
     {
         type: 'input',
-        message: 'Write project description:';
+        message: 'Write project description:',
         name: 'description',
     },
 
-    // Prompt for table of contents
+    // Installation
     {
-        type: 'checkbox',
-        message: 'Do you want a table of contents?';
-        name: 'tableOfContents',
-        choices: ['yes', 'no'],
-    },
-
-     // Installation
-     {
         type: 'input',
-        message: 'Write instructions for installation.';
+        message: 'Write instructions for installation.',
         name: 'installation',
     },
 
-     // Usage
-     {
+    // Usage
+    {
         type: 'input',
-        message: 'Write notes for usage';
+        message: 'Write notes for usage.',
         name: 'usage',
     },
 
-     // License
-     {
+    // License
+    {
         type: 'checkbox',
-        message: 'Select which license your project will have';
+        message: 'Select which license your project will have.',
         name: 'license',
         choices: ["MIT", "APACHE","GPL","none of the above"]
     },
 
-     // Contributing
-     {
+    // Contributing
+    {
         type: 'input',
-        message: 'How can users contribute to this project?';
+        message: 'How can users contribute to this project?',
         name: 'contributing',
     },
 
-      // Test
-      {
+    // Test
+    {
         type: 'input',
-        message: 'How does a user test this project?';
+        message: 'How does a user test this project?',
         name: 'tests',
     },
 
-      // Github
-      {
+    // Github
+    {
         type: 'input',
-        message: 'Enter your Github username';
+        message: 'Enter your Github username.',
         name: 'github',
     },
 
-      // email
-      {
+    // email
+    {
         type: 'input',
-        message: 'Enter your email address';
+        message: 'Enter your email address.',
         name: 'email',
     },
 
     
-])
+];
 
-// from class exercise to create a JSON file
-// .then((data) => {
-//     const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
 
-//     fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-//       err ? console.log(err) : console.log('Success!')
-//     );
-
-//   });
-
-// Create file as text file - see day 1 exercise 14-stu_appendFile
-// fs.appendFile('log.txt', `${process.argv[2]}\n`, (err) =>
-//   // TODO: Describe how this ternary operator works
-//   err ? console.error(err) : console.log('Commit logged!')
-// );
-
-// TODO: Create a function to write README file
+// Function to create readme file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => {
-        if (err) {
-            return console.log(err);
-        }
+    fs.writeFile(fileName, data, (err) => 
+    err ? console.log(err) : console.log('README file successfully generated!'))
+};
 
-    console.log("README file successfully created!");
+// Function to initialize
+function init () {
+    inquirer.promp(questions)
+    .then(function (userInput) {
+        console.log(userInput)
+        writeToFile("sampleREADME.md", generateMarkdown(userInput));
     });
 };
 
-// TODO: Create a function to initialize app
-function init() {
-    inquirer.createPromptModule(questions)
-    .then(function (userInput) {
-        console.log(userInput)
-        writeToFile("README.md", generateMarkdown(userInput));
-    });
-} ;
+init();
 
-// Function call to initialize app
-init(); 
+
+
+
+
+// .then((ansers) => {
+//     const readMeContent = generateMarkdown(ansers);
+//     fs.writeFile('sampleREADME.md', readMeContent, (err) =>
+//     err ? console.log(err) : console.log('README file successfully created!')
+//     );
+// });
