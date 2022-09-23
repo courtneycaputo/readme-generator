@@ -27,7 +27,7 @@ ${installation}
 ${usage}
 
 ## License: <a name="license"></a>
-${license}
+This project is licensed under the ${license} license.
 
 ## Contribution Guidelines: <a name="contributing"></a>
 ${contributing}
@@ -64,21 +64,21 @@ inquirer.prompt([
     // Installation
     {
         type: 'input',
-        message: 'Write instructions for installation.',
+        message: 'Write instructions for installation:',
         name: 'installation',
     },
 
     // Usage
     {
         type: 'input',
-        message: 'Write notes for usage.',
+        message: 'Write notes for usage:',
         name: 'usage',
     },
 
     // License
     {
         type: 'checkbox',
-        message: 'Select which license your project will have.',
+        message: 'Select which license your project will have:',
         name: 'license',
         choices: ["MIT", "Apache_2.0","BSD_3--Clause","EPL"]
     },
@@ -100,14 +100,14 @@ inquirer.prompt([
     // Github
     {
         type: 'input',
-        message: 'Enter your Github username.',
+        message: 'Enter your Github username:',
         name: 'github',
     },
 
     // email
     {
         type: 'input',
-        message: 'Enter your email address.',
+        message: 'Enter your email address:',
         name: 'email',
     },
 
@@ -115,22 +115,6 @@ inquirer.prompt([
 ])
 
 
-// // Function to create readme file
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, data, (err) => 
-//     err ? console.log(err) : console.log('README file successfully generated!'));
-// };
-
-// // Function to initialize
-// function init () {
-//     inquirer.promp(questions)
-//     .then(function (userInput) {
-//         console.log(userInput)
-//         writeToFile("sampleREADME.md", generateMarkdown(userInput));
-//     });
-// };
-
-// init();
 
 
 
@@ -138,7 +122,7 @@ inquirer.prompt([
 
 .then((answers) => {
     const readMeContent = generateMarkdown(answers);
-    fs.writeFile('sampleREADME.md', readMeContent, (err) =>
+    fs.writeFile('README.md', readMeContent, (err) =>
     err ? console.log(err) : console.log('README file successfully created!')
     );
 });
