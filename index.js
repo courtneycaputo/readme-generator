@@ -15,34 +15,34 @@ const generateMarkdown = ({title, description, installation, usage, license, con
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [Contact](#contact)
+- [Questions](#questions)
     
 ## Description: <a name="description"></a>
 ${description}
 
-## Installation: <a name="installation"></a>
+## Installation Instructions: <a name="installation"></a>
 ${installation}
 
-## Usage: <a name="usage"></a>
+## Usage Information: <a name="usage"></a>
 ${usage}
 
 ## License: <a name="license"></a>
 ${license}
 
-## Contributing: <a name="contributing"></a>
+## Contribution Guidelines: <a name="contributing"></a>
 ${contributing}
 
-## Tests: <a name="tests"></a>
+## Test Instructions: <a name="tests"></a>
 ${tests}
 
-## Contact: <a name="contact"></a>
+## Questions: <a name="questions"></a>
+If you have questions regarding this project, you can contact me directly at:
 * Github: <a href="https://github.com/${github}">${github}</a>
 * Email: <a href="mailto:${email}">${email}</a>
 
     
 `;
 
-console.log("Welcome to my README generator")
 console.log("Answer the following questions to generate a high quality, professional README")
 
 // Questions the user will answer to populate data into README
@@ -138,7 +138,7 @@ inquirer.prompt([
 
 .then((answers) => {
     const readMeContent = generateMarkdown(answers);
-    fs.writeFile('README.md', readMeContent, (err) =>
+    fs.writeFile('sampleREADME.md', readMeContent, (err) =>
     err ? console.log(err) : console.log('README file successfully created!')
     );
 });
