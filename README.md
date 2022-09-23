@@ -21,7 +21,7 @@ To install the necessary dependencies, run the following command: `npm i inquire
 ## Usage Information: <a name="usage"></a>
 This application is used to generate a high quality README file. To use this application, clone the repository and run "node index.js" in the terminal where the root directly of the cloned project is saved. Answer the prompts that appear in terminal. Once all prompts are answered, a README.md file will be generated for the user.
 
-<img src="/images/terminal-screenshot">
+<img src="/images/terminal-screenshot.png">
 
 <a href="https://drive.google.com/file/d/1X9dodlK32e2cbhGJUmdo1jFOUJVp_ik7/view">Video to demo</a>
 
