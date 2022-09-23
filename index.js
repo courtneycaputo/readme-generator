@@ -122,7 +122,7 @@ inquirer.prompt([
 
 .then((answers) => {
     const readMeContent = generateMarkdown(answers);
-    fs.writeFile('README.md', readMeContent, (err) =>
+    fs.writeFile('sampleREADME.md', readMeContent, (err) =>
     err ? console.log(err) : console.log('README file successfully created!')
     );
 });

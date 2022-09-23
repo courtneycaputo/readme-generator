@@ -1,7 +1,7 @@
 
-# test project title
+# README Generator
     
-[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD_3--Clause)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 - [Description](#description)
@@ -10,27 +10,32 @@
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [Contact](#contact)
+- [Questions](#questions)
     
 ## Description: <a name="description"></a>
-tester
+This project was to create a README.md generator using node.js. The purpose of this application is to allow a user to easily generate a pre-formatted README file in terminal. 
 
-## Installation: <a name="installation"></a>
-test installing
+## Installation Instructions: <a name="installation"></a>
+To install the necessary dependencies, run the following command: `npm i inquirer`
 
-## Usage: <a name="usage"></a>
-test uasage
+## Usage Information: <a name="usage"></a>
+This application is used to generate a high quality README file. To use this application, clone the repository and run "node index.js" in the terminal where the root directly of the cloned project is saved. Answer the prompts that appear in terminal. Once all prompts are answered, a README.md file will be generated for the user.
+
+<img src="/images/terminal-screenshot">
+
+<a href="https://drive.google.com/file/d/1X9dodlK32e2cbhGJUmdo1jFOUJVp_ik7/view">Video to demo</a>
 
 ## License: <a name="license"></a>
-BSD_3--Clause
+This project is licensed under the MIT license.
 
-## Contributing: <a name="contributing"></a>
-contribute
+## Contribution Guidelines: <a name="contributing"></a>
+There are currently no contribution guidelines.
 
-## Tests: <a name="tests"></a>
-by testing it
+## Test Instructions: <a name="tests"></a>
+No testing currently available.
 
-## Contact: <a name="contact"></a>
+## Questions: <a name="questions"></a>
+If you have questions regarding this project, you can contact me directly at:
 * Github: <a href="https://github.com/courtneycaputo">courtneycaputo</a>
 * Email: <a href="mailto:courtneycaputo@gmail.com">courtneycaputo@gmail.com</a>
 
